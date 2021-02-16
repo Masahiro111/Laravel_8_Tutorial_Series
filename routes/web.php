@@ -5,6 +5,7 @@ use App\Http\Controllers\FluentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SessionController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -48,3 +49,12 @@ Route::get('/login', [LoginController::class, 'index'])
     ->name('login.index');
 
 Route::post('/login', [LoginController::class, 'loginSubmit'])->name('login.submit');
+
+Route::get('/session/get', [SessionController::class, 'getSessionData'])
+    ->name('session.get');
+
+Route::get('/session/set', [SessionController::class, 'storeSessionData'])
+    ->name('session.store');
+
+Route::get('/session/remove', [SessionController::class, 'deleteSessionData'])
+    ->name('session.delete');
