@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\FluentController;
 use App\Http\Controllers\HomeController;
@@ -138,3 +139,10 @@ Route::get('/payment', function () {
 
 
 Route::get('/students', [StudentController::class, 'fetchStudents']);
+
+Route::get('/add-article', [ArticleController::class, 'addArticle']);
+
+Route::post('/create-article', [ArticleController::class, 'createArticle'])
+    ->name('article.create');
+
+Route::get('/articles', [ArticleController::class, 'getArticle']);
