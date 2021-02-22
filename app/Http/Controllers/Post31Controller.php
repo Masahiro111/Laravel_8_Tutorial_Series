@@ -29,7 +29,7 @@ class Post31Controller extends Controller
 
     public function getCommentsByPost($id)
     {
-        $comments = Post::find($id)->comments;
+        $comments = Post31::find($id)->comments;
         return $comments;
     }
 }
