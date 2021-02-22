@@ -156,3 +156,7 @@ Route::get('/edit-article/{id}', [ArticleController::class, 'editArticle']);
 
 Route::post('/update-article', [ArticleController::class, 'updateArticle'])
     ->name('article.update');
+
+Route::get('/add-user', [UserController::class, 'insertRecord']);
+
+Route::get('/get-phone/{id}', [UserController::class, 'fetchPhoneByUser']);
