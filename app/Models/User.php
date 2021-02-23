@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Models\Role;
 
 class User extends Authenticatable
 {
@@ -44,5 +45,10 @@ class User extends Authenticatable
     public function phone()
     {
         return $this->hasOne('App\Models\Phone');
+    }
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class, 'role_users');
     }
 }
