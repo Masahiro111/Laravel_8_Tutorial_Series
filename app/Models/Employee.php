@@ -14,7 +14,7 @@ class Employee extends Model
 
     public static function getEmployee()
     {
-        $records = DB::table('employees')->select('id,', 'name', 'email', 'phone', 'salary', 'department')->get()->toArray();
+        $records = DB::table('employees')->select('id', 'name', 'email', 'phone', 'salary', 'department')->get()->toArray();
         return $records;
     }
 }

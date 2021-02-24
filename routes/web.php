@@ -178,3 +178,7 @@ Route::get('/rolesbyuser/{id}', [RoleController::class, 'getAllRolesByUser']);
 Route::get('/usersbyrole/{id}', [RoleController::class, 'getAllUsersByRole']);
 
 Route::get('/add-employee', [EmployeeController::class, 'addEmployee']);
+
+Route::get('/export-excel', [EmployeeController::class, 'exportIntoExcel']);
+
+Route::get('/export-csv', [EmployeeController::class, 'exportIntoCSV']);
