@@ -62,4 +62,13 @@ class EmployeeController extends Controller
     {
         return Excel::download(new EmployeeExport, 'employeelist.csv');
     }
+
+    public function importForm()
+    {
+        return view('import-form');
+    }
+
+    public function import(Request $request)
+    {
+    }
 }
