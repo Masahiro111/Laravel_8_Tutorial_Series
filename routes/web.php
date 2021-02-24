@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\DropzoneController;
 use App\Http\Controllers\EmpController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\FluentController;
@@ -198,3 +199,8 @@ Route::get('/resize-image', [ImageController::class, 'resizeImage']);
 
 Route::post('/resize-image', [ImageController::class, 'resizeImageSubmit'])
     ->name('image.resize');
+
+Route::get('/dropzone', [DropzoneController::class, 'dropzone']);
+
+Route::post('/dropzone-store', [DropzoneController::class, 'dropzoneStore'])
+    ->name('dropzone.store');
