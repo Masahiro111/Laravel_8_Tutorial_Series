@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Employee;
 use Illuminate\Http\Request;
-use Maatwebsite\Excel\Excel;
 use PDF;
 
 class EmpController extends Controller
