@@ -8,7 +8,6 @@ use App\Http\Controllers\PaginationController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SessionController;
-use App\Http\Controllers\UploadController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -118,9 +117,3 @@ Route::get('/contact', function () {
 
 Route::get('/users', [PaginationController::class, 'allUsers'])
     ->name('users');
-
-
-Route::get('/upload', [UploadController::class, 'uploadForm']);
-
-Route::post('/upload', [UploadController::class, 'uploadFile'])
-    ->name('upload.uploadfile');
