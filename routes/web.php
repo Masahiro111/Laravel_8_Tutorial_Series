@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ClientController;
-use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\FluentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
@@ -176,5 +175,3 @@ Route::get('/add-users', [RoleController::class, 'addUser']);
 Route::get('/rolesbyuser/{id}', [RoleController::class, 'getAllRolesByUser']);
 
 Route::get('/usersbyrole/{id}', [RoleController::class, 'getAllUsersByRole']);
-
-Route::get('/add-employee', [EmployeeController::class, 'addEmployee']);
