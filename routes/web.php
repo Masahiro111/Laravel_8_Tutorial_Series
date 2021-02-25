@@ -11,7 +11,6 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
-use App\PaymentGateway\Payment;
 
 /*
 |--------------------------------------------------------------------------
@@ -130,7 +129,3 @@ Route::get('/upload', [UploadController::class, 'uploadForm']);
 
 Route::post('/upload', [UploadController::class, 'uploadFile'])
     ->name('upload.uploadfile');
-
-Route::get('/payment', function () {
-    return Payment::Process();
-});
