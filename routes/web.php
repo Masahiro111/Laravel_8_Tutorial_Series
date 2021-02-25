@@ -46,4 +46,6 @@ Route::get('/fluent-string', [FluentController::class, 'index'])
 
 Route::get('/add-student', [StudentController::class, 'addStudent']);
 
-Route::post('/add-student', [StudentController::class, 'storeStudent'])->name('studen.store');
+Route::post('/add-student', [StudentController::class, 'storeStudent'])->name('student.store');
+
+Route::get('/all-student', [StudentController::class, 'students']);

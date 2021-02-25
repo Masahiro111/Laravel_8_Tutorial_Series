@@ -16,7 +16,7 @@ class StudentController extends Controller
     {
         $name = $request->name;
         $image = $request->file('file');
-        $imageName = time() . ',' . $image->extension();
+        $imageName = time() . '.' . $image->extension();
 
         $image->move(public_path('images'), $imageName);
 
@@ -24,6 +24,12 @@ class StudentController extends Controller
         $student->name = $name;
         $student->profileimage = $imageName;
         $student->save();
-        return back()->with('studen_added', 'Student recor has been inserted');
+        return back()->with('student_added', 'Student recor has been inserted');
+    }
+
+    public function students()
+    {
+        $students = Student::all();
+        return view('all-students', compact('students'));
     }
 }
