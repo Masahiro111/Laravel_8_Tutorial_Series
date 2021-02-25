@@ -6,6 +6,7 @@ use App\Http\Controllers\DropzoneController;
 use App\Http\Controllers\EmpController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\FluentController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LoginController;
@@ -204,3 +205,5 @@ Route::get('/dropzone', [DropzoneController::class, 'dropzone']);
 
 Route::post('/dropzone-store', [DropzoneController::class, 'dropzoneStore'])
     ->name('dropzone.store');
+
+Route::get('/gallery', [GalleryController::class, 'gallery']);
