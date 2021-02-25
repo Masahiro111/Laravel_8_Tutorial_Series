@@ -97,7 +97,3 @@ Route::get('/right-join', [PostController::class, 'rightJoinClause'])
 
 Route::get('/all-posts', [PostController::class, 'getAllPostUsingModel'])
     ->name('post.getallpostusingmodel');
-
-Route::get('/test', function () {
-    return view('test');
-});
