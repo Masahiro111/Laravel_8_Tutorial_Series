@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ClientController;
-use App\Http\Controllers\EmpController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\FluentController;
 use App\Http\Controllers\HomeController;
@@ -183,7 +182,3 @@ Route::get('/add-employee', [EmployeeController::class, 'addEmployee']);
 Route::get('/export-excel', [EmployeeController::class, 'exportIntoExcel']);
 
 Route::get('/export-csv', [EmployeeController::class, 'exportIntoCSV']);
-
-route::get('/get-all-employee', [EmpController::class, 'getAllEmployees']);
-
-Route::get('/download-pdf', [EmpController::class, 'downloadPDF']);
