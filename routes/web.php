@@ -160,9 +160,3 @@ Route::post('/update-article', [ArticleController::class, 'updateArticle'])
 Route::get('/add-user', [UserController::class, 'insertRecord']);
 
 Route::get('/get-phone/{id}', [UserController::class, 'fetchPhoneByUser']);
-
-Route::get('/add-post', [PostController::class, 'addPost']);
-
-Route::get('/add-comment/{id}', [PostController::class, 'addComment']);
-
-Route::get('/get-comments', [PostController::class, 'getCommentsByPost']);
