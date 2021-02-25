@@ -6,7 +6,6 @@ use App\Http\Controllers\EmpController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\FluentController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PaginationController;
 use App\Http\Controllers\PostController;
@@ -193,8 +192,3 @@ Route::get('/import-form', [EmployeeController::class, 'importForm']);
 
 Route::post('/import', [EmployeeController::class, 'import'])
     ->name('employee.import');
-
-Route::get('/resize-image', [ImageController::class, 'resizeImage']);
-
-Route::post('/resize-image', [ImageController::class, 'resizeImageSubmit'])
-    ->name('image.resize');
