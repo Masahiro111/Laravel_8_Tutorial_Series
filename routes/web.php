@@ -8,7 +8,6 @@ use App\Http\Controllers\PaginationController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SessionController;
-use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -135,6 +134,3 @@ Route::post('/upload', [UploadController::class, 'uploadFile'])
 Route::get('/payment', function () {
     return Payment::Process();
 });
-
-
-Route::get('/students', [StudentController::class, 'fetchStudents']);
