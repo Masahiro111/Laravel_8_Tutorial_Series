@@ -189,6 +189,3 @@ route::get('/get-all-employee', [EmpController::class, 'getAllEmployees']);
 Route::get('/download-pdf', [EmpController::class, 'downloadPDF']);
 
 Route::get('/import-form', [EmployeeController::class, 'importForm']);
-
-Route::post('/import', [EmployeeController::class, 'import'])
-    ->name('employee.import');

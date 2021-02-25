@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\Employee;
 use App\Exports\EmployeeExport;
 use Excel;
-use App\Imports\EmployeeImport;
 
 class EmployeeController extends Controller
 {
@@ -71,7 +70,5 @@ class EmployeeController extends Controller
 
     public function import(Request $request)
     {
-        Excel::import(new EmployeeImport, $request->file);
-        return "record are imported";
     }
 }
