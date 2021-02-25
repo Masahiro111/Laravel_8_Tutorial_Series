@@ -23,11 +23,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/locale/{locale}', function ($locale) {
-//     App::setLocale($locale);
-//     return view('welcome');
-// });
-
 Route::get('/', [ProductController::class, 'index'])
     ->name('product.index');
 
