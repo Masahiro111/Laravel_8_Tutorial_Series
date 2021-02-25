@@ -8,7 +8,6 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PaginationController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UploadController;
@@ -167,11 +166,3 @@ Route::get('/add-post', [PostController::class, 'addPost']);
 Route::get('/add-comment/{id}', [PostController::class, 'addComment']);
 
 Route::get('/get-comments', [PostController::class, 'getCommentsByPost']);
-
-Route::get('/add-roles', [RoleController::class, 'addRole']);
-
-Route::get('/add-users', [RoleController::class, 'addUser']);
-
-Route::get('/rolesbyuser/{id}', [RoleController::class, 'getAllRolesByUser']);
-
-Route::get('/usersbyrole/{id}', [RoleController::class, 'getAllUsersByRole']);
