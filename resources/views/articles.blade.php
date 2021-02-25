@@ -15,43 +15,32 @@
     <section style="padding-top:60px;">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 offset-md-2">
+                <div class="col-md-6 offset-md-3">
                     <div class="card">
                         <div class="card-header">
-                            All Article <a href="/add-article" class="btn btn-success">Add New Article</a>
+                            Add Article
                         </div>
                         <div class="card-body">
-                            @if (Session::has('article_deleted'))
-                            <div class="alert alert-success" rol="alert">
-                                {{Session::get('article_deleted')}}
+                            @if (Session::has('article_created'))
+                            <div class="alert alert-success" role="alert">
+                                {{Session::get('article_created')}}
                             </div>
                             @endif
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>article title</th>
-                                        <th>article description</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($articles as $article)
-                                    <tr>
-                                        <td>{{$article->id}}</td>
-                                        <td>{{$article->title}}</td>
-                                        <td>{{$article->body}}</td>
-                                        <td>
-                                            <a href="/articles/{{$article->id}}" class="btn btn-info">Details</a>
-                                            <a href="/edit-article/{{$article->id}}" class="btn btn-success">Edit</a>
-                                            <a href="/delete-article/{{$article->id}}" class="btn btn-danger">Delete</a>
-                                        </td>
-                                    </tr>
 
-                                    @endforeach
-                                </tbody>
-                            </table>
+                            <form action="{{route('article.create')}}" method="post">
+                                @csrf
+                                <div class="form-group">
+                                    <label for="title">Post Title</label>
+                                    <input type="text" name="title" id="" class="form-control"
+                                        placeholder="Enter Post Title">
+                                </div>
 
+                                <div class="form-group">
+                                    <label for="body">Post Description</label>
+                                    <textarea class="form-control" name="body" id="" cols="30" rows="3"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </form>
                         </div>
                     </div>
                 </div>

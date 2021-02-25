@@ -12,7 +12,6 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\UserController;
-use App\Models\Article;
 use Illuminate\Support\Facades\Route;
 use App\PaymentGateway\Payment;
 
@@ -147,12 +146,3 @@ Route::post('/create-article', [ArticleController::class, 'createArticle'])
     ->name('article.create');
 
 Route::get('/articles', [ArticleController::class, 'getArticle']);
-
-Route::get('/articles/{id}', [ArticleController::class, 'getArticleById']);
-
-Route::get('/delete-article/{id}', [ArticleController::class, 'deleteArticle']);
-
-Route::get('/edit-article/{id}', [ArticleController::class, 'editArticle']);
-
-Route::post('/update-article', [ArticleController::class, 'updateArticle'])
-    ->name('article.update');
