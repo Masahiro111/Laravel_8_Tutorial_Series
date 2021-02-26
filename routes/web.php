@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FluentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
@@ -56,3 +57,7 @@ Route::get('edit-student/{id}', [StudentController::class, 'editStudent']);
 Route::post('/update-student', [StudentController::class, 'updateStudent'])->name('student.update');
 
 Route::get('/delete-student/{id}', [StudentController::class, 'deleteStudent'])->name('student.delete');
+
+Route::get('/contact-us', [ContactController::class, 'contact']);
+
+Route::post('/send-message', [ContactController::class, 'sendEmail'])->name('contact.send ');
