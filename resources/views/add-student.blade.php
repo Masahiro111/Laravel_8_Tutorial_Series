@@ -71,9 +71,16 @@
     </script>
     @if (Session::has('student_added'))
     <script>
-        toastr.success('{!! Session::get('student_added') !!}');
+        toastr.success("{!! Session::get('student_added') !!}");
     </script>
+    @endif
 
+    @if (Session::has('student_added'))
+    <script>
+        swal("Great Job!", "{!! Session::get('student_added') !!}","success",{
+            button: "OK",
+        });
+    </script>
     @endif
 </body>
 
