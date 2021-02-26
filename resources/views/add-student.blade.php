@@ -69,6 +69,12 @@
             }
         }
     </script>
+    @if (Session::has('student_added'))
+    <script>
+        toastr.success('{!! Session::get('student_added') !!}');
+    </script>
+
+    @endif
 </body>
 
 </html>
