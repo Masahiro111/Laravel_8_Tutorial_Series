@@ -14,17 +14,23 @@
 
     <section style="padding-top:60px">
         <div class="container">
-            <div class="col-md-6 offset-md-3">
+            <div class="col-md-12 offset-md-0">
                 <div class="card">
                     <div class="card-header">
-                        All New Student
+                        All New Student <a href="/add-student" class="btn btn-primary">Add new</a>
                     </div>
                     <div class="card-body">
+                        @if(Session::has('student_deleted'))
+                        <div class="alert alert-success" role="alert">
+                            {{Session::get('student_deleted')}}
+                        </div>
+                        @endif
                         <table class="table table-striped">
                             <thead>
                                 <tr>
                                     <th>Name</th>
                                     <th>Profile Image</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -33,6 +39,10 @@
                                     <td>{{$student->name}}</td>
                                     <td><img src="{{asset('images')}}/{{$student->profileimage}}"
                                             style="max-width:60px;" alt=""></td>
+                                    <td>
+                                        <a href="/edit-student/{{$student->id}}" class="btn btn-info">Edit</a>
+                                        <a href="/delete-student/{{$student->id}}" class="btn btn-danger">Delete</a>
+                                    </td>
                                 </tr>
                                 @endforeach
 
