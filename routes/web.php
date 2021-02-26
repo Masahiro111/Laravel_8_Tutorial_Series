@@ -6,6 +6,7 @@ use App\Http\Controllers\FluentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
 use App\Models\Student;
 use Illuminate\Support\Facades\Route;
@@ -61,3 +62,5 @@ Route::get('/delete-student/{id}', [StudentController::class, 'deleteStudent'])-
 Route::get('/contact-us', [ContactController::class, 'contact']);
 
 Route::post('/send-message', [ContactController::class, 'sendEmail'])->name('contact.send ');
+
+Route::get('/get-name', [TestController::class, 'getFistLastName']);
