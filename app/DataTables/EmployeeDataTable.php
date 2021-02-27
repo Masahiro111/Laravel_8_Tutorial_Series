@@ -47,7 +47,6 @@ class EmployeeDataTable extends DataTable
             ->setTableId('employee-table')
             ->columns($this->getColumns())
             ->minifiedAjax()
-            ->dom('Bfrtip')
             ->orderBy(1);
     }
 
@@ -61,10 +60,10 @@ class EmployeeDataTable extends DataTable
         return [
             'id',
             'name',
-            'emial',
+            'email',
             'phone',
             'salary',
-            'department'
+            'department',
         ];
     }
 
