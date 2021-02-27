@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\FluentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
@@ -74,3 +75,5 @@ Route::get('/autocomplete', [ProductController::class, 'autocomplete'])
     ->name('autocomplete');
 
 Route::get('/zip', [ZipController::class, 'zipFile']);
+
+Route::get('/employee', [EmployeeController::class, 'index']);
