@@ -8,7 +8,6 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\ZipController;
 use App\Models\Student;
 use Illuminate\Support\Facades\Route;
 
@@ -72,5 +71,3 @@ Route::get('/search', [ProductController::class, 'search']);
 
 Route::get('/autocomplete', [ProductController::class, 'autocomplete'])
     ->name('autocomplete');
-
-Route::get('/zip', [ZipController::class, 'zipFile']);
