@@ -7,29 +7,21 @@ use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
-    public function addStudent()
+
+    public function index()
     {
-        return view('add-student');
+        $students = Student::orderBy('id', 'DESC')->get();
+        return view('students', compact('students'));
     }
 
-    public function storeStudent(Request $request)
+    public function addStudent(Request $request)
     {
-        $name = $request->name;
-        $image = $request->file('file');
-        $imageName = time() . '.' . $image->extension();
-
-        $image->move(public_path('images'), $imageName);
-
         $student = new Student();
-        $student->name = $name;
-        $student->profileimage = $imageName;
+        $student->firstname = $request->firstname;
+        $student->lastname = $request->lastname;
+        $student->email = $request->email;
+        $student->phone = $request->phone;
         $student->save();
-        return back()->with('student_added', 'Student recor has been inserted');
-    }
-
-    public function students()
-    {
-        $students = Student::all();
-        return view('all-students', compact('students'));
+        return response()->json($student);
     }
 }

@@ -49,3 +49,8 @@ Route::get('/add-student', [StudentController::class, 'addStudent']);
 Route::post('/add-student', [StudentController::class, 'storeStudent'])->name('student.store');
 
 Route::get('/all-student', [StudentController::class, 'students']);
+
+Route::get('/students', [StudentController::class, 'index']);
+
+Route::post('/add-student', [StudentController::class, 'addStudent'])
+    ->name('student.add');
