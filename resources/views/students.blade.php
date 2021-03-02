@@ -248,7 +248,6 @@
                 $(".checkBoxClass").prop('checked',$(this).prop('checked'));
 
             });
-        });
 
         $("#deleteAllSelectedRecord").click(function(e){
             e.preventDefault();
@@ -268,10 +267,11 @@
                 success:function(response){
                     $.each(allids,function(key,val){
                         $("#sid" + val).remove();
-                    });
+                    })
                 }
             });
-        });
+        })
+    });
     </script>
 
 </body>
