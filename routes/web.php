@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ChartController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\FluentController;
 use App\Http\Controllers\HomeController;
@@ -73,3 +74,5 @@ Route::post('/register', [AuthController::class, 'registerSubmit'])
     ->name('auth.registersubmit');
 
 Route::get('/posts', [PostController::class, 'index']);
+
+Route::get('/chart', [ChartController::class, 'index']);
