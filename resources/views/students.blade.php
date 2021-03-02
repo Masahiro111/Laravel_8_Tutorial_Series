@@ -24,11 +24,15 @@
                                 data-target="#studentModalLabel">
                                 Add New Student
                             </button>
+                            <button type="button" class="btn btn-danger" id="deleteAllSelectedRecord">
+                                Delete Selected
+                            </button>
 
                         </div>
                         <div class="card-body">
                             <table id="studentTable" class="table">
                                 <thead>
+                                    <th><input type="checkbox" name="" id="chkCheckAll"></th>
                                     <th>First Name</th>
                                     <th>Last Name</th>
                                     <th>Email</th>
@@ -38,6 +42,8 @@
                                 <tbody>
                                     @foreach ($students as $student)
                                     <tr id="sid{{$student->id}}">
+                                        <td><input type="checkbox" name="ids" class="checkBoxClass"
+                                                value="{{$student->id}}"></td>
                                         <td>{{$student->firstname}}</td>
                                         <td>{{$student->lastname}}</td>
                                         <td>{{$student->email}}</td>
@@ -234,6 +240,38 @@
                 });
             }
         }
+    </script>
+
+    <script>
+        $(function(e){
+            $("#chkCheckAll").click(function(){
+                $(".checkBoxClass").prop('checked',$(this).prop('checked'));
+
+            });
+        });
+
+        $("#deleteAllSelectedRecord").click(function(e){
+            e.preventDefault();
+            var allids =[];
+
+            $("input:checkbox[name=ids]:checked").each(function(){
+                allids.push($(this).val());
+            });
+
+            $.ajax({
+                url:"{{route('student.deleteSelected')}}",
+                type: "DELETE",
+                data:{
+                    _token:$("input[name=_token]").val(),
+                    ids:allids
+                },
+                success:function(response){
+                    $.each(allids,function(key,val){
+                        $("#sid" + val).remove();
+                    });
+                }
+            });
+        });
     </script>
 
 </body>
