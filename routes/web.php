@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\FluentController;
 use App\Http\Controllers\HomeController;
@@ -64,3 +65,8 @@ Route::put('/student', [StudentController::class, 'updateStudent'])
 Route::delete('/students/{id}', [StudentController::class, 'deleteStudent']);
 
 Route::delete('/selected-students', [StudentController::class, 'deleteCheckedStudents'])->name('student.deleteSelected');
+
+Route::get('/register', [AuthController::class, 'index']);
+
+Route::post('/register', [AuthController::class, 'registerSubmit'])
+    ->name('auth.registersubmit');
