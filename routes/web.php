@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\FluentController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
@@ -70,3 +71,5 @@ Route::get('/register', [AuthController::class, 'index']);
 
 Route::post('/register', [AuthController::class, 'registerSubmit'])
     ->name('auth.registersubmit');
+
+Route::get('/posts', [PostController::class, 'index']);
