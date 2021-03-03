@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ChartController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\FluentController;
+use App\Http\Controllers\FormController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
@@ -76,3 +77,8 @@ Route::post('/register', [AuthController::class, 'registerSubmit'])
 Route::get('/posts', [PostController::class, 'index']);
 
 Route::get('/chart', [ChartController::class, 'index']);
+
+Route::get('/form', [FormController::class, 'index']);
+
+Route::post('/form', [FormController::class, 'formSubmit'])
+    ->name('form.formsubmit');
