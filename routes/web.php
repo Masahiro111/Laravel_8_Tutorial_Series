@@ -82,3 +82,8 @@ Route::get('/form', [FormController::class, 'index']);
 
 Route::post('/form', [FormController::class, 'formSubmit'])
     ->name('form.submit');
+
+
+Route::get('/add-student', [StudentController::class, 'addStudent']);
+
+Route::get('/students', [StudentController::class, 'getStudents']);
