@@ -81,4 +81,4 @@ Route::get('/chart', [ChartController::class, 'index']);
 Route::get('/form', [FormController::class, 'index']);
 
 Route::post('/form', [FormController::class, 'formSubmit'])
-    ->name('form.formsubmit');
+    ->name('form.submit');
