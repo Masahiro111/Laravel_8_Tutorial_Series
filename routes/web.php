@@ -10,6 +10,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
+use App\Http\Livewire\Home;
 use App\Http\Livewire\Post;
 use App\Http\Livewire\User;
 use Illuminate\Support\Facades\Route;
@@ -28,8 +29,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ProductController::class, 'index'])
     ->name('product.index');
 
-Route::get('/home/{name?}', [HomeController::class, 'index'])
-    ->name('home.index');
+// Route::get('/home/{name?}', [HomeController::class, 'index'])
+//     ->name('home.index');
 
 Route::get('/user', [UserController::class, 'index'])
     ->name('user.index');
@@ -93,3 +94,5 @@ Route::get('/students', [StudentController::class, 'getStudents']);
 Route::get('/post', Post::class);
 
 Route::get('/user', User::class);
+
+Route::get('/home/{name?}', Home::class);
