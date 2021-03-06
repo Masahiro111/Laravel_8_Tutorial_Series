@@ -10,6 +10,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
+use App\Http\Livewire\Action;
 use App\Http\Livewire\Form;
 use App\Http\Livewire\Home;
 use App\Http\Livewire\Post;
@@ -100,3 +101,5 @@ Route::get('/home/{name?}', Home::class);
 
 
 Route::get('/form', Form::class);
+
+Route::get('/action', Action::class);
