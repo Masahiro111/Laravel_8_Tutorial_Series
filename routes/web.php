@@ -109,3 +109,5 @@ Route::get('/action', Action::class);
 Route::get('/product', Product::class);
 
 Route::get('/contact', Contact::class);
+
+Route::get('/users', User::class);

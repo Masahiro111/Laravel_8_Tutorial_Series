@@ -2,16 +2,16 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\User as Users;
 use Livewire\Component;
 
 class User extends Component
 {
+    public $users;
+
     public function render()
     {
-        return <<<'blade'
-            <div>
-                <h1>Hello! users!</h1>
-            </div>
-        blade;
+        $this->users = Users::all();
+        return view('livewire.user');
     }
 }
