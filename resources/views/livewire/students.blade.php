@@ -5,6 +5,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
+                    @if (session()->has('message'))
+                    <div class="alert alert-success">{{session('message')}}</div>
+                    @endif
                     <div class="card">
                         <div class="card-header">
                             <h3>All Students
@@ -33,6 +36,9 @@
                                         <td>{{$student->lastname}}</td>
                                         <td>{{$student->email}}</td>
                                         <td>{{$student->phone}}</td>
+                                        <td>
+                                            <button type="button" class="btn btn-info" data-toggle="modal">Edit</button>
+                                        </td>
                                     </tr>
 
                                     @endforeach

@@ -17,9 +17,14 @@
     <script src="js/bootstrap.min.js"></script>
     @livewireScripts
     <script>
-        window.on('studentAdded',()=>{
+        window.livewire.on('studentAdded',()=>{
             $('#addStudentModal').modal('hide');
         });
+
+        window.livewire.on('studentUpdated',()=>{
+            $('#updateStudentModal').modal('hide');
+        });
+        
     </script>
 </body>
 
