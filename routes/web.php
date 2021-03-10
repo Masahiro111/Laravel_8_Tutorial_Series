@@ -14,6 +14,7 @@ use App\Http\Livewire\Action;
 use App\Http\Livewire\Contact;
 use App\Http\Livewire\Form;
 use App\Http\Livewire\Home;
+use App\Http\Livewire\Images;
 use App\Http\Livewire\Post;
 use App\Http\Livewire\Product;
 use App\Http\Livewire\Uploads;
@@ -117,3 +118,5 @@ Route::get('/users', User::class);
 Route::get('/all-users', Users::class);
 
 Route::get('/uploads', Uploads::class);
+
+Route::get('/upload-images', Images::class);

@@ -30,6 +30,10 @@
         window.livewire.on('studentUploaded',()=>{
             $('#form-upload')[0].modal('hide');
         });
+
+        window.livewire.on('imagesUploaded',()=>{
+            $('#upload-images')[0].reset();
+        });
     </script>
 </body>
 
