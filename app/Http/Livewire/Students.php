@@ -13,6 +13,7 @@ class Students extends Component
     public $lastname;
     public $email;
     public $phone;
+    public $serchTerm;
 
     public function resetInputFields()
     {
@@ -82,7 +83,13 @@ class Students extends Component
 
     public function render()
     {
-        $students = Student::orderBy('id', 'DESC')->get();
+        $serchTerm = '%' . $this->serchTerm . '%';
+        $students = Student::where('firstname', 'LIKE', $serchTerm)
+            ->orWhere('lastname', 'LIKE', $serchTerm)
+            ->orWhere('email', 'LIKE', $serchTerm)
+            ->orWhere('phone', 'LIKE', $serchTerm)
+            ->orderBy('id', 'DESC')
+            ->get();
         return view('livewire.students', compact('students'));
     }
 }
