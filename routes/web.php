@@ -16,7 +16,6 @@ use App\Http\Livewire\Form;
 use App\Http\Livewire\Home;
 use App\Http\Livewire\Post;
 use App\Http\Livewire\Product;
-use App\Http\Livewire\Students;
 use App\Http\Livewire\User;
 use App\Http\Livewire\Users;
 use Illuminate\Support\Facades\Route;
@@ -115,5 +114,3 @@ Route::get('/contact', Contact::class);
 Route::get('/users', User::class);
 
 Route::get('/all-users', Users::class);
-
-Route::get('/students', Students::class);

@@ -11,10 +11,20 @@ class Student extends Model
 
     protected $table = "students";
 
-    protected $fillabel = [
-        'firstname',
-        'lastname',
-        'email',
-        'phone',
-    ];
+    protected $fillable = ["name", "email", "phone"];
+
+    public function setEmailAttribute($value)
+    {
+        $this->attributes['email'] = strtolower($value);
+    }
+
+    public function getNameAttribute($value)
+    {
+        return strtoupper($value);
+    }
+
+    public function getEmailAttribute($value)
+    {
+        return strtoupper($value);
+    }
 }
