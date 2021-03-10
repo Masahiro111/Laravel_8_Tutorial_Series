@@ -25,6 +25,12 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
     @livewireScripts
+
+    <script>
+        window.livewire.on('studentUploaded',()=>{
+            $('#form-upload')[0].modal('hide');
+        });
+    </script>
 </body>
 
 </html>
