@@ -49,14 +49,6 @@ class Students extends Component
         $this->phone = $student->phone;
     }
 
-    public function delete($id)
-    {
-        if ($id) {
-            Student::where('id', $id)->delete();
-            session()->flash('message', 'delete done!');
-        }
-    }
-
     public function update()
     {
         $this->validate([
