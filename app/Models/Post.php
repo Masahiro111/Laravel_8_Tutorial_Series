@@ -11,5 +11,5 @@ class Post extends Model
 
     protected $table = "posts";
 
-    protected $connection = "mysql2";
+    protected $fillable = ['title', 'body'];
 }
